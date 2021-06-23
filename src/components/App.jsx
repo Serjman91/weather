@@ -1,27 +1,22 @@
 // libraries
-import React from 'react';
-// static
-import logo from 'assets/images/logo.svg';
+import React, { useState } from 'react';
+// api
+import { getCurrentWeather } from 'api/weather';
+// components
+import Form from 'components/shared/Form';
+import WeatherCard from 'components/WeatherCard';
 // styles
 import './App.css';
 
 const App = () => {
+    const [weatherData, setWeatherData] = useState(null);
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                  Learn React
-                </a>
-            </header>
+        <div className="container">
+            <h2 className="page-title">Get Weather for free!</h2>
+            <Form onSubmitCallback={setWeatherData} />
+
+            {weatherData && <WeatherCard weatherData={weatherData} />}
         </div>
     );
 };
