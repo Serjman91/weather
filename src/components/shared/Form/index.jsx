@@ -1,15 +1,11 @@
 // libraries
-import React, { useEffect } from 'react';
+import React from 'react';
 // api
 import { getCurrentWeather } from 'api/weather';
+// styles
+import './index.css';
 
 const Form = ({ onSubmitCallback }) => {
-    // useEffect(async () => {
-    //     const data = await getCurrentWeather({ query: 'Madrid' });
-    //
-    //     console.log(data);
-    // });
-
     const handleSubmit = async event => {
         event.preventDefault();
 
@@ -29,8 +25,8 @@ const Form = ({ onSubmitCallback }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="query">City</label>
+        <form className="input__city-form" onSubmit={handleSubmit}>
+            <label htmlFor="query">Hey, bro, let see the weather in your city!</label>
             <input id="query" type="text" name="query" placeholder="Please enter city" />
             <input type="submit" value="Submit" />
         </form>

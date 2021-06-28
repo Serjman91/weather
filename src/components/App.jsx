@@ -1,7 +1,5 @@
 // libraries
 import React, { useState } from 'react';
-// api
-import { getCurrentWeather } from 'api/weather';
 // components
 import Form from 'components/shared/Form';
 import WeatherCard from 'components/WeatherCard';
