@@ -17,7 +17,7 @@ const App = () => {
     useEffect(async () => {
         const coords = await new Promise(resolve => {
             navigator.geolocation.getCurrentPosition(data => {
-                resolve(data.coords)
+                resolve(data.coords);
             });
         });
 
@@ -53,7 +53,7 @@ const App = () => {
     }, [userCity]);
 
     if (isLoading) {
-        return <h2 className="page-title">Loading...</h2>
+        return <h2 className="page-title">Loading...</h2>;
     }
 
     return (
