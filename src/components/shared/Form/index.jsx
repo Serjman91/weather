@@ -1,27 +1,14 @@
 // libraries
 import React from 'react';
-// api
-import { getCurrentWeather } from 'api/weather';
 // styles
 import './index.css';
 
-const Form = ({ onSubmitCallback }) => {
+const Form = ({ onSubmitCallback, closeFormCallback }) => {
     const handleSubmit = async event => {
         event.preventDefault();
 
-        const formData = {
-            [event.target.query.name]: event.target.query.value
-        };
-
-        try {
-            const data = await getCurrentWeather(formData);
-
-            if (onSubmitCallback) {
-                onSubmitCallback(data);
-            }
-        } catch (e) {
-            console.error(e);
-        }
+        onSubmitCallback(event.target.query.value);
+        closeFormCallback(false);
     };
 
     return (

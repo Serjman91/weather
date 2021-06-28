@@ -6,7 +6,7 @@ import './index.css';
 const WeatherCard = ({ weatherData }) => {
     const currentTime = new Date().toLocaleString();
     const {
-        location: { name },
+        location: { name } = [],
         current: {
             temperature,
             humidity,
@@ -17,7 +17,7 @@ const WeatherCard = ({ weatherData }) => {
             visibility,
             wind_speed,
             weather_descriptions
-        }
+        } = {},
     } = weatherData || {};
 
     return (

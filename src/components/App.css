@@ -19,3 +19,9 @@ body {
   text-align: center;
   font-size: 36px;
 }
+
+.page-sub-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 36px;
+}
